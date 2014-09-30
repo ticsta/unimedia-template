@@ -1,7 +1,12 @@
-
+<% function getTitle() {
+  if(document && document.title)
+    return document.title + ' - ' + site.title;
+  return site.title;
+} %>
 <html>
   <head>
-    <title><%= (document.title + ' - ' + site.title) %></title>
+    <title><%= getTitle() %></title>
+    <link rel="stylesheet" type="text/css" href="<%= asset_src('static/css/main.css') %>">
   </head>
   <body>
     <% content %>
