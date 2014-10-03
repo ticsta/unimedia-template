@@ -6,3 +6,11 @@ priority: 0
 <div>
   Index
 </div>
+<%
+var list= [{name: 'ion'},{name: 'vasile'}];
+%>
+<ul>
+<% list.forEach(function(item){ %>
+  <% include ../item %>
+<% }) %>
+</ul>
