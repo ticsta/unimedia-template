@@ -1,4 +1,129 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #333;
+	background: #E0E0E0;
+}
+h1 {
+	margin-bottom: 6px;
+}
+h1, h2, h3, h4, h5 {
+	margin: 0px;
+}
+h1, a {
+	color: #2E65A3;
+}
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+	color: #F58974;
+}
+p {
+	margin: 0 0 10px;
+}
+#wrap {
+	margin: 0 auto;
+	position: relative;
+	max-width: 1240px;
+}
+#page-top-banner {
+	text-align: center;
+	padding: 15px;
+}
+.clearfix:after, .clearfix:before {
+	content: " ";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+#page-header {
+	margin-bottom: 20px;
+}
+#logo {
+	background-color: #2E65A3;
+	overflow: hidden;
+}
+#page-header-info {
+	padding-top: 20px;
+}
+#page-header-info h4 {
+	max-width: 160px;
+	color: #2E65A3;
+	padding: 0px 10px;
+	border-right: 2px solid #fff;
+}
+#page-header-info .inner {
+	background-color: #DCDDDF;
+	position: relative;
+	margin-left: -28px;
+}
+/*
+  article page
+*/
 
-#fix{
-  width: 100%;
+article h1 {
+	margin-bottom: 10px;
+}
+#news-item_image {
+	float: left;
+	display: inline-block;
+	max-width: 350px;
+	margin: 0px 10px 10px 0px;
+	background-color: #eee;
+	border: 1px solid #ccc;
+	padding: 1px;
+}
+#news-item_image img {
+	width: 346px;
+	min-height: 180px;
+}
+#news-item_image p {
+	color: #555;
+	padding: 6px 4px;
+	font-size: 80%;
+	margin: 0px;
+}
+#news-item_body {} #page-content {
+	background-color: #fff;
+	padding: 15px;
+}
+.list.ot-news-item {
+	margin: 0px;
+	padding: 0px;
+}
+.list.ot-news-item h3 {
+	margin: 0px;
+}
+.list.ot-news-item .list-item {
+	clear: both;
+	padding: 6px 0px;
+	border-bottom: 1px solid #ddd;
+	list-style-type: none;
+}
+.list.ot-news-item .list-item img {
+	border: 1px solid #ddd;
+	padding: 2px;
+	margin: 0px 6px 6px 0px;
+	width: 106px;
+	min-height: 50px;
+}
+.tab {
+	margin-bottom: 20px;
+}
+.tab .tab-title {
+	background-color: #eee;
+	height: 20px;
+}
+.tab-title h4 {
+	color: #fff;
+	display: inline-block;
+	padding: 2px 5px;
+	background-color: #2E65A3;
+	position: relative;
+	top: -4px;
+	border-right: 2px solid #fff;
 }

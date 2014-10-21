@@ -8,4 +8,7 @@ defaultSection: pages
 
 assets:
   names:
-    css_main: static/css/main.css
+    css_main:
+      - static/css/normalize.css
+      - static/css/bootstrap.css
+      - static/css/main.css

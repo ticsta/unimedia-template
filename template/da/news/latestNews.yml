@@ -1,5 +1,5 @@
 ###
-# select latest 'feature' news document
+# select latest news
 ###
 
 SELECT:
@@ -13,7 +13,6 @@ SELECT:
     - COLUMN: 'imageId'
     - COLUMN: 'imageExtension'
     - COLUMN: 'publishedAt'
-    - COLUMN: 'body'
   FROM: Documents
 
   WHERE:
@@ -33,4 +32,4 @@ SELECT:
       name: publishedAt
       direction: DESC
 
-  LIMIT: 1
+  LIMIT: 10

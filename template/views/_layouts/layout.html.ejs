@@ -1,15 +1,61 @@
 <% function getTitle() {
   if(document && document.title)
-    return document.title + ' - ' + site.title;
+    return document.title;
   return site.title;
 } %>
 <html>
   <head>
     <title><%= getTitle() %></title>
-    <link rel="stylesheet" type="text/css" href="<%= asset_src('static/css/main.css') %>">
+    <link rel="stylesheet" type="text/css" href="<%= asset_src('css_main') %>">
   </head>
   <body>
-    <% content %>
-    <% include footer %>
+    <div id="wrap" class="container">
+      <div class="ban" id="page-top-banner">
+      </div>
+      <div id="page-content">
+        <div class="row" id="page-header">
+          <div class="col-sm-3 col-xs-12">
+            <div id="logo">
+              <a href="/" title="<%= site.title %>"><img src="<%= asset_src('static/img/logo.jpg') %>" alt="logo"/></a>
+            </div>
+          </div>
+          <div class="col-sm-9 col-xs-12">
+            <div id="page-header-info">
+              <div class="inner">
+                <h4>portalul de ştiri nr. 1 din Moldova</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8 col-ms-12">
+            <% content %>
+          </div>
+          <div class="col-md-4 col-ms-12">
+            <div class="tab">
+              <div class="tab-title">
+                <h4>Ultimele stiri</h4>
+              </div>
+              <div class="tab-content">
+                <%+ da.news.latestNews().then(function(rows){ %>
+                  <ul class="list ot-news-item">
+                  <% rows.forEach(function(doc){ %>
+                    <li class="list-item">
+                      <div class="item clearfix">
+                        <a href="<%= doc_url(doc) %>">
+                          <img class="pull-left" src="<%= image_src(doc.imageId, doc.imageExtension, 'small') %>" alt="" />
+                          <h3><%= doc.title %></h3>
+                        </a>
+                      </div>
+                    </li>
+                  <% }) %>
+                  </ul>
+                <% }) %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

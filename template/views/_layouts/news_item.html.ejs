@@ -1,0 +1,16 @@
+---
+layout: layout
+section: news
+type: item
+---
+
+<article>
+  <h1><a href="<%- doc_url(document) %>"><%- document.title %></a></h1>
+<div class="clearfix">
+<aside id="news-item_image">
+<img src="<%- image_src(document.imageId, document.imageExtension, 'large') %>" alt="<%- document.title %>" />
+<div><%- document.body.image.description %></div>
+</aside>
+<div id="news-item_body" class="clearfix"><%- document.body.article %></div>
+</div>
+</article>
