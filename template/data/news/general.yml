@@ -1,2 +1,24 @@
 
 language: ro
+
+categories:
+  - name: Politic
+    slug: politic
+  - name: Social
+    slug: social
+  - name: Economic
+    slug: economic
+  - name: Externe
+    slug: extern
+  - name: Media/IT
+    slug: media-it
+  - name: Sport
+    slug: sport
+  - name: Auto
+    slug: auto
+  - name: Integrare Europeană
+    slug: integrare-europeana
+  - name: Cultură/Stiinţă
+    slug: cultura-stiinta
+  - name: Monden
+    slug: monden

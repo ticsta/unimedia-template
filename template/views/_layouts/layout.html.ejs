@@ -2,29 +2,46 @@
   if(document && document.title)
     return document.title;
   return site.title;
-} %>
+}
+  function getCategory(){
+    if(document && document.DocumentGroupItems && document.DocumentGroupItems.length>0)
+      return document.DocumentGroupItems[0].GroupItem.slug;
+    return null;
+  }
+%>
 <html>
   <head>
     <title><%= getTitle() %></title>
     <link rel="stylesheet" type="text/css" href="<%= asset_src('css_main') %>">
+    <link rel="canonical" href="<%= document.url %>" />
+    <link rel="shortcut icon" href="<%= asset_src('static/img/favicon.ico') %>" />
   </head>
   <body>
     <div id="wrap" class="container">
       <div class="ban" id="page-top-banner">
       </div>
       <div id="page-content">
-        <div class="row" id="page-header">
-          <div class="col-sm-3 col-xs-12">
-            <div id="logo">
-              <a href="/" title="<%= site.title %>"><img src="<%= asset_src('static/img/logo.jpg') %>" alt="logo"/></a>
-            </div>
-          </div>
-          <div class="col-sm-9 col-xs-12">
-            <div id="page-header-info">
-              <div class="inner">
-                <h4>portalul de ştiri nr. 1 din Moldova</h4>
+        <div id="page-header">
+          <div class="row">
+            <div class="col-sm-3 col-xs-12">
+              <div id="logo">
+                <a href="/" title="<%= site.title %>"><img src="<%= asset_src('static/img/logo.jpg') %>" alt="logo"/></a>
               </div>
             </div>
+            <div class="col-sm-9 col-xs-12">
+              <div id="page-header-info">
+                <div class="inner">
+                  <h4>portalul de ştiri nr. 1 din Moldova</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="page-main-menu" class="clearfix">
+            <ul class="mm">
+              <% data.news.categories.forEach(function(item){ %>
+              <li><a class="<%- (getCategory() === item.slug ? 'active': '') %>" href="/<%- item.slug %>/"><%= item.name %></a></li>
+              <% }) %>
+            </ul>
           </div>
         </div>
         <div class="row">

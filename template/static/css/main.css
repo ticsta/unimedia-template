@@ -127,3 +127,45 @@ article h1 {
 	top: -4px;
 	border-right: 2px solid #fff;
 }
+#page-main-menu {
+	margin-top: 12px;
+	position: relative;
+	background-color: #004d9b;
+	background: #004d9b;
+	background: -moz-linear-gradient(top, #004d9b 0%, #2e65a3 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #004d9b), color-stop(100%, #2e65a3));
+	background: -webkit-linear-gradient(top, #004d9b 0%, #2e65a3 100%);
+	background: -o-linear-gradient(top, #004d9b 0%, #2e65a3 100%);
+	background: -ms-linear-gradient(top, #004d9b 0%, #2e65a3 100%);
+	background: linear-gradient(top, #004d9b 0%, #2e65a3 100%);
+	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#004d9b', endColorstr='#2e65a3', GradientType=0);
+	text-shadow: 1px 1px 0 #254161;
+}
+#page-main-menu ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+#page-main-menu ul li {
+	float: left;
+}
+#page-main-menu ul li a {
+	color: #fff;
+	display: block;
+	font-weight: bold;
+	padding: 8px 12px;
+	border-right: 1px solid #254161;
+	border-left: 1px solid #5686bc;
+	text-decoration: none;
+}
+#page-main-menu ul li a:hover{
+	background: #004d9b;
+}
+#page-main-menu ul li a.active {
+	border-right: 1px solid #FFF;
+	border-left: none;
+	padding: 12px 15px 12px 15px;
+	background: #F58974;
+	position: relative;
+	margin-top: -8px;
+}

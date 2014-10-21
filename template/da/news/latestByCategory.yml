@@ -5,15 +5,15 @@
 SELECT:
   DISTINCT:
   COLUMNS:
-    - COLUMN: 'doc.id'
-    - COLUMN: 'doc.section'
-    - COLUMN: 'doc.type'
-    - COLUMN: 'doc.title'
-    - COLUMN: 'doc.slug'
-    - COLUMN: 'doc.summary'
-    - COLUMN: 'doc.imageId'
-    - COLUMN: 'doc.imageExtension'
-    - COLUMN: 'doc.publishedAt'
+    - COLUMN: doc.id
+    - COLUMN: doc.section
+    - COLUMN: doc.type
+    - COLUMN: doc.title
+    - COLUMN: doc.slug
+    - COLUMN: doc.summary
+    - COLUMN: doc.imageId
+    - COLUMN: doc.imageExtension
+    - COLUMN: doc.publishedAt
   FROM:
     - TABLE:
         name: Documents
