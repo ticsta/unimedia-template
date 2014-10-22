@@ -87,9 +87,10 @@ article h1 {
 	font-size: 80%;
 	margin: 0px;
 }
-#news-item_body {} #page-content {
+#page-content {
 	background-color: #fff;
 	padding: 15px;
+	margin-bottom: 20px;
 }
 .list.ot-news-item {
 	margin: 0px;
@@ -99,10 +100,16 @@ article h1 {
 	margin: 0px;
 }
 .list.ot-news-item .list-item {
-	clear: both;
 	padding: 6px 0px;
 	border-bottom: 1px solid #ddd;
 	list-style-type: none;
+}
+.list .list-item {
+	clear: both;
+}
+.list .list-item:before, .list .list-item:before {
+	display: table;
+	content: " ";
 }
 .list.ot-news-item .list-item img {
 	border: 1px solid #ddd;
@@ -110,6 +117,17 @@ article h1 {
 	margin: 0px 6px 6px 0px;
 	width: 106px;
 	min-height: 50px;
+}
+.ot-news-item .list-item.view-small .item{
+	min-height: 50px;
+}
+.ot-news-item .list-item.view-small h3 {
+	font-size: 95%;
+	font-weight: normal;
+}
+.ot-news-item .list-item.view-small img {
+	width: 64px;
+	min-height: 24px;
 }
 .tab {
 	margin-bottom: 20px;
@@ -140,11 +158,14 @@ article h1 {
 	background: linear-gradient(top, #004d9b 0%, #2e65a3 100%);
 	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#004d9b', endColorstr='#2e65a3', GradientType=0);
 	text-shadow: 1px 1px 0 #254161;
+	border-bottom: 1px solid #F58974;
 }
 #page-main-menu ul {
 	list-style-type: none;
 	margin: 0px;
 	padding: 0px;
+	width: 100%;
+	border-bottom: 1px solid #fff;
 }
 #page-main-menu ul li {
 	float: left;
@@ -157,15 +178,17 @@ article h1 {
 	border-right: 1px solid #254161;
 	border-left: 1px solid #5686bc;
 	text-decoration: none;
+	font-size: 13px;
 }
-#page-main-menu ul li a:hover{
+#page-main-menu ul li a:hover {
 	background: #004d9b;
 }
 #page-main-menu ul li a.active {
 	border-right: 1px solid #FFF;
 	border-left: none;
-	padding: 12px 15px 12px 15px;
+	padding: 13px 15px 12px 15px;
 	background: #F58974;
 	position: relative;
 	margin-top: -8px;
+	margin-bottom: -1px;
 }

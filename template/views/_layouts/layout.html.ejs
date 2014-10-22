@@ -8,6 +8,10 @@
       return document.DocumentGroupItems[0].GroupItem.slug;
     return null;
   }
+
+  function isHome(){
+    return document.url === 'index.html';
+  }
 %>
 <html>
   <head>
@@ -37,7 +41,8 @@
             </div>
           </div>
           <div id="page-main-menu" class="clearfix">
-            <ul class="mm">
+            <ul class="mm clearfix">
+              <li><a href="/" class="<%- (isHome() ? 'active': '') %>">Acasă</a></li>
               <% data.news.categories.forEach(function(item){ %>
               <li><a class="<%- (getCategory() === item.slug ? 'active': '') %>" href="/<%- item.slug %>/"><%= item.name %></a></li>
               <% }) %>

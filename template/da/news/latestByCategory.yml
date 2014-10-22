@@ -26,6 +26,14 @@ SELECT:
         - COLUMN: dgi.documentId
         - OPERATOR: =
         - COLUMN: doc.id
+    - JOIN: INNER
+    - TABLE:
+        name: GroupItems
+        as: gi
+    - ON:
+        - COLUMN: gi.id
+        - OPERATOR: =
+        - COLUMN: dgi.groupItemId
 
   WHERE:
 
@@ -41,7 +49,7 @@ SELECT:
 
     - OPERATOR: AND
 
-    - COLUMN: dgi.groupSlug
+    - COLUMN: gi.slug
     - OPERATOR: =
     - PARAM: category
 
@@ -50,4 +58,5 @@ SELECT:
       name: doc.publishedAt
       direction: DESC
 
-  LIMIT: 10
+  LIMIT:
+    PARAM: limit

@@ -1,0 +1,10 @@
+
+dynamics:
+  - source:
+      da: news.categories
+    document:
+      layout: category.html.ejs
+      #what property of category will become document.title
+      title: name
+      #permalink
+      permalink: /:slug/index.html

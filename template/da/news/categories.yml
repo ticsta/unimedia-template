@@ -1,0 +1,14 @@
+###
+# select news categories
+###
+
+SELECT:
+  COLUMNS:
+    - COLUMN: id
+    - COLUMN: name
+    - COLUMN: slug
+  FROM: GroupItems
+  WHERE:
+    - COLUMN: groupSlug
+    - OPERATOR: =
+    - VALUE: categories

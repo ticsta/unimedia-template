@@ -2,4 +2,39 @@
 layout: ../layout
 priority: 0
 ---
-
+<div class="row">
+<% data.news.categories.forEach(function(category){ %>
+<%+ da.news.latestByCategory({category: category.slug, limit: 5}).then(function(docs){ %>
+<div class="col-sm-6 col-xs-12">
+<div class="tab">
+  <div class="tab-title">
+    <!-- <a class="pull-right" href="/"><img src="<%= asset_src('static/img/rss.gif') %>"></a> -->
+    <h4><%= category.name %></h4>
+  </div>
+  <div class="tab-content">
+    <ul class="list ot-news-item">
+      <% for(var i = 0; i < docs.length; i++) { %>
+      <% var doc = docs[i]; %>
+      <% if(i==0) { %>
+      <li class="list-item view-normal">
+        <div class="item">
+          <h3><a href="<%= doc_url(doc) %>"><%= doc.title %></a></h3>
+          <img src="<%= image_src(doc.imageId, doc.imageExtension, 'small') %>" class="pull-left">
+          <p><%= doc.summary %></p>
+        </div>
+      </li>
+      <% } else { %>
+      <li class="list-item view-small">
+        <div class="item">
+          <img src="<%= image_src(doc.imageId, doc.imageExtension, 'small') %>" class="pull-left">
+          <h3><a href="<%= doc_url(doc) %>"><%= doc.title %></a></h3>
+        </div>
+      </li>
+      <% }} %>
+    </ul>
+  </div>
+</div>
+</div>
+<% }) %>
+<% }) %>
+</div>
