@@ -158,7 +158,7 @@ article h1 {
 	background: linear-gradient(top, #004d9b 0%, #2e65a3 100%);
 	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#004d9b', endColorstr='#2e65a3', GradientType=0);
 	text-shadow: 1px 1px 0 #254161;
-	border-bottom: 1px solid #F58974;
+	border-bottom: 3px solid #F58974;
 }
 #page-main-menu ul {
 	list-style-type: none;

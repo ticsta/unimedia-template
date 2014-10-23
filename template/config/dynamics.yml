@@ -3,8 +3,9 @@ dynamics:
   - source:
       da: news.categories
     document:
-      layout: category.html.ejs
+      layout: category
       #what property of category will become document.title
       title: name
       #permalink
       permalink: /:slug/index.html
+      extensions: ['html','ejs']

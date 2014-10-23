@@ -11,7 +11,7 @@ categories:
   - name: Externe
     slug: extern
   - name: Media/IT
-    slug: media-it
+    slug: mediait
   - name: Sport
     slug: sport
   - name: Auto
@@ -19,6 +19,6 @@ categories:
   - name: Integrare Europeană
     slug: integrare-europeana
   - name: Cultură/Stiinţă
-    slug: cultura-stiinta
+    slug: culturastiinta
   - name: Monden
     slug: monden
