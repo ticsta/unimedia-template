@@ -2,61 +2,14 @@
 # select latest news by category slug
 ###
 
-SELECT:
-  DISTINCT:
-  COLUMNS:
-    - COLUMN: doc.id
-    - COLUMN: doc.section
-    - COLUMN: doc.type
-    - COLUMN: doc.title
-    - COLUMN: doc.slug
-    - COLUMN: doc.summary
-    - COLUMN: doc.imageId
-    - COLUMN: doc.imageExtension
-    - COLUMN: doc.publishedAt
-  FROM:
-    - TABLE:
-        name: Documents
-        as: doc
-    - JOIN: INNER
-    - TABLE:
-        name: DocumentGroupItems
-        as: dgi
-    - ON:
-        - COLUMN: dgi.documentId
-        - OPERATOR: =
-        - COLUMN: doc.id
-    - JOIN: INNER
-    - TABLE:
-        name: GroupItems
-        as: gi
-    - ON:
-        - COLUMN: gi.id
-        - OPERATOR: =
-        - COLUMN: dgi.groupItemId
-
-  WHERE:
-
-    - COLUMN: doc.section
-    - OPERATOR: =
-    - VALUE: news
-
-    - OPERATOR: AND
-
-    - COLUMN: doc.status
-    - OPERATOR: =
-    - VALUE: published
-
-    - OPERATOR: AND
-
-    - COLUMN: gi.slug
-    - OPERATOR: =
-    - PARAM: category
-
-  ORDER BY:
-    COLUMN:
-      name: doc.publishedAt
-      direction: DESC
-
-  LIMIT:
-    PARAM: limit
+api: list
+model: document
+select:
+  - fields
+where:
+  section: stiri
+  status: published
+  groupitems.uniqueName: 'categories:@category'
+order:
+  - publishedAt: DESC
+limit: '@limit'

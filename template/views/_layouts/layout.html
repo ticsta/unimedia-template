@@ -5,8 +5,8 @@
 }
   function getCategory(){
     if(!document) return null;
-    if(document.DocumentGroupItems && document.DocumentGroupItems.length>0)
-      return document.DocumentGroupItems[0].GroupItem.slug;
+    if(document.GroupItems && document.GroupItems.length>0)
+      return document.GroupItems[0].slug;
     return document.slug;
     return null;
   }
@@ -18,8 +18,8 @@
 <html>
   <head>
     <title><%= getTitle() %></title>
-    <link rel="stylesheet" type="text/css" href="<%= asset_src('css_main') %>">
-    <link rel="canonical" href="<%= document.url %>" />
+    <link rel="stylesheet" type="text/css" href="<%= asset_src('css-main') %>">
+    <link rel="canonical" href="<%- doc_url(document) %>" />
     <link rel="shortcut icon" href="<%= asset_src('static/img/favicon.ico') %>" />
   </head>
   <body>

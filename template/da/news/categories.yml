@@ -2,13 +2,10 @@
 # select news categories
 ###
 
-SELECT:
-  COLUMNS:
-    - COLUMN: id
-    - COLUMN: name
-    - COLUMN: slug
-  FROM: GroupItems
-  WHERE:
-    - COLUMN: groupSlug
-    - OPERATOR: =
-    - VALUE: categories
+api: list
+model: groupitem
+select:
+  - fields
+where:
+  group: categories
+limit: 10

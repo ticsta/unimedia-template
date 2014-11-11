@@ -1,7 +1,7 @@
 ---
 layout: layout
-section: news
-type: item
+section: stiri
+type: stire
 ---
 
 <article>
@@ -9,9 +9,9 @@ type: item
 <div class="clearfix">
 <aside id="news-item_image">
 <img src="<%- image_src(document.imageId, document.imageExtension, 'large') %>" alt="<%- document.title %>" />
-<div><%- document.body.image.description %></div>
+<% if(document.body.image.description) { %><div><%- markdown(document.body.image.description) %></div><%}%>
 </aside>
-<div id="news-item_body" class="clearfix"><%- document.body.article %></div>
+<div id="news-item_body" class="clearfix"><%- markdown(document.body.article) %></div>
 </div>
 </article>
 <br/>
