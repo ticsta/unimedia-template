@@ -10,5 +10,5 @@ where:
   section: stiri
   status: published
 order:
-  - publishedAt: DESC
+  publishedAt: DESC
 limit: 10

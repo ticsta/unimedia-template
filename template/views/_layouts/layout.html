@@ -5,8 +5,12 @@
 }
   function getCategory(){
     if(!document) return null;
-    if(document.GroupItems && document.GroupItems.length>0)
-      return document.GroupItems[0].slug;
+    if(document.groupItems && document.groupItems.length>0) {
+      for(var i=0;i<document.groupItems.length;i++ ) {
+        if(document.groupItems[i].groupName=='categories')
+        return document.groupItems[i].uniqueName.substr(11);
+      }
+    }
     return document.slug;
     return null;
   }

@@ -11,5 +11,5 @@ where:
   status: published
   groupitems.uniqueName: 'categories:@category'
 order:
-  - publishedAt: DESC
+  publishedAt: DESC
 limit: '@limit'

@@ -23,6 +23,7 @@ defaultSection: pages
 ###
 permalink:
   simple: :section/:title.:extension
+  category: :slug/index.html
 
 
 assets:

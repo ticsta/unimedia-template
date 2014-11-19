@@ -1,11 +1,7 @@
 
 dynamics:
-  - source:
+  - list:
       da: news.categories
-    document:
+    count: 100
+    item:
       layout: category
-      #what property of category will become document.title
-      title: name
-      #permalink
-      permalink: /:slug/index.html
-      extensions: ['html','ejs']

@@ -3,9 +3,11 @@
 ###
 
 api: list
-model: groupitem
+model: topgroupitem
 select:
   - fields
 where:
-  group: categories
+  groupName: categories
+order:
+  createdAt: ASC
 limit: 10

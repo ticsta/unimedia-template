@@ -15,6 +15,13 @@ type: stire
 </div>
 </article>
 <br/>
+<% if(document.groupItems) { %>
+<ul>
+  <% document.groupItems.forEach(function(item){ %>
+<li><%= item.name %></li>
+    <% }) %>
+</ul>
+<%}%>
 <div class="tab">
   <div class="tab-title">
     
