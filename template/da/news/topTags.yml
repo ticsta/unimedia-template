@@ -1,5 +1,5 @@
 ###
-# select news categories
+# select top tags
 ###
 
 api: list
@@ -7,8 +7,8 @@ model: topgroupitem
 select:
   - fields
 where:
-  groupName: categories
+  groupName: tags
   selector: .
 order:
-  createdAt: ASC
+  count: ASC
 limit: 10

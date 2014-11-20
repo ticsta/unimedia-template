@@ -1,5 +1,5 @@
 ###
-# select latest news by category slug
+# select latest news by groupItem
 ###
 
 api: list
@@ -9,7 +9,7 @@ select:
 where:
   section: stiri
   status: published
-  groupItems.uniqueName: 'categories:@category'
+  groupItems.uniqueName: '@groupItem'
 order:
   publishedAt: DESC
 limit: '@limit'

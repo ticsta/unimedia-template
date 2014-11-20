@@ -82,6 +82,23 @@
                   </ul>
                 <% }) %>
               </div>
+            <div class="tab">
+              <div class="tab-title">
+                <h4>Top taguri</h4>
+              </div>
+              <div class="tab-content">
+                <%+ da.news.topTags().then(function(rows){ %>
+                  <ul class="list ot-tag">
+                  <% rows.forEach(function(doc){ %>
+                    <li class="list-item">
+                      <div class="item clearfix">
+                        <a href="<%= permalink('tag', doc) %>"><%= doc.name %></a>
+                      </div>
+                    </li>
+                  <% }) %>
+                  </ul>
+                <% }) %>
+              </div>
             </div>
           </div>
         </div>
