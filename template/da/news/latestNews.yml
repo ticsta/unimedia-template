@@ -2,13 +2,15 @@
 # select latest news by category slug
 ###
 
-api: list
-model: document
-select:
-  - fields
-where:
-  section: stiri
-  status: published
-order:
-  publishedAt: DESC
-limit: 10
+source: db
+params:
+  api: list
+  model: document
+  select:
+    - fields
+  where:
+    section: stiri
+    status: published
+  order:
+    publishedAt: DESC
+  limit: 10

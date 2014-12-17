@@ -2,13 +2,14 @@
 # select news categories
 ###
 
-api: list
-model: topgroupitem
-select:
-  - fields
-where:
-  groupName: categories
-  selector: .
-order:
-  createdAt: ASC
-limit: 10
+source: db
+params:
+  api: list
+  model: topgroupitem
+  select: [fields]
+  where:
+    groupName: categories
+    selector: .
+  order:
+    createdAt: ASC
+  limit: 10

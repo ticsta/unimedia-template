@@ -2,13 +2,15 @@
 # select top tags
 ###
 
-api: list
-model: topgroupitem
-select:
-  - fields
-where:
-  groupName: tags
-  selector: .
-order:
-  count: ASC
-limit: 10
+source: db
+params:
+  api: list
+  model: topgroupitem
+  select:
+    - fields
+  where:
+    groupName: tags
+    selector: .
+  order:
+    count: ASC
+  limit: 10

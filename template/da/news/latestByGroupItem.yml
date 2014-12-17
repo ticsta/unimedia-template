@@ -2,14 +2,16 @@
 # select latest news by groupItem
 ###
 
-api: list
-model: document
-select:
-  - fields
-where:
-  section: stiri
-  status: published
-  groupItems.uniqueName: '@groupItem'
-order:
-  publishedAt: DESC
-limit: '@limit'
+source: db
+params:
+  api: list
+  model: document
+  select:
+    - fields
+  where:
+    section: stiri
+    status: published
+    groupItems.uniqueName: '@{groupItem}'
+  order:
+    publishedAt: DESC
+  limit: '@{limit}'

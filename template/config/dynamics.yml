@@ -1,15 +1,15 @@
 
-dynamics:
-  categories:
-    list:
-      da: news.categories
-    count: 100
-    item:
-      layout: category
+# dynamics:
+#   categories:
+#     list:
+#       da: news.categories
+#     count: 100
+#     item:
+#       layout: category
 
-  toptags:
-    list:
-      da: news.topTags
-    count: 100
-    item:
-      layout: tag
+#   toptags:
+#     list:
+#       da: news.topTags
+#     count: 100
+#     item:
+#       layout: tag
