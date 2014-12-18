@@ -12,4 +12,4 @@ params:
     selector: .
   order:
     createdAt: ASC
-  limit: 10
+  limit: '@{limit|10}'

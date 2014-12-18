@@ -13,4 +13,4 @@ params:
     status: published
   order:
     publishedAt: DESC
-  limit: 10
+  limit: '@{limit|10}'

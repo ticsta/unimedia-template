@@ -14,4 +14,4 @@ params:
     groupItems.uniqueName: 'categories:@{category}'
   order:
     publishedAt: DESC
-  limit: '@{limit}'
+  limit: '@{limit|10}'

@@ -1,0 +1,57 @@
+
+tasks:
+  ###############
+  ## tags
+  ###############
+
+  # new tags, trigger when a document is published
+  tags.new:
+    type: list
+    source:
+      da: groups.freshTags
+      params:
+        time: '@{$10m}'
+        limit: 20
+      limit: 0
+    file:
+      layout: tag
+    trigger: document.published
+
+  # fresh tags, trigger on every 3 hours
+  tags.fresh:
+    type: list
+    source:
+      da: groups.freshTags
+      params:
+        time: '@{$6h}'
+        limit: 20
+      limit: 0
+    file:
+      layout: tag
+    trigger: $3h
+
+  # new categories, trigger when a document is published
+  categories.new:
+    type: list
+    source:
+      da: groups.freshCategories
+      params:
+        time: '@{$10m}'
+        limit: 20
+      limit: 0
+    file:
+      layout: category
+    trigger: document.published
+
+  # fresh categories, trigger on every 3 hours
+  categories.fresh:
+    type: list
+    source:
+      da: groups.freshCategories
+      params:
+        time: '@{$6h}'
+        limit: 20
+      limit: 0
+    file:
+      layout: category
+    trigger: $3h

@@ -10,7 +10,7 @@ params:
     - fields
   where:
     groupName: tags
-    selector: .
+    selector: '@{selector|.}'
   order:
-    count: ASC
-  limit: 10
+    count: DESC
+  limit: '@{limit|10}'

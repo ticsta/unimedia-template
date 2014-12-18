@@ -1,0 +1,18 @@
+###
+# select fresh tags
+###
+
+source: db
+params:
+  api: list
+  model: topgroupitem
+  select:
+    - fields
+  where:
+    groupName: tags
+    selector: '@{selector|.}'
+    updatedAt:
+      $gte: '@{time:$1h}'
+  order:
+    updatedAt: DESC
+  limit: '@{limit|10}'
