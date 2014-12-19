@@ -49,7 +49,7 @@
           <div id="page-main-menu" class="clearfix">
             <ul class="mm clearfix">
               <li><a href="/" class="<%- (isHome() ? 'active': '') %>">Acasă</a></li>
-              <%+ da.news.categories().then(function(categories){ %>
+              <%+ da.groups.categories().then(function(categories){ %>
                 <% categories.forEach(function(item){ %>
                 <li><a class="<%- (getCategory() === item.slug ? 'active': '') %>" href="/<%- item.slug %>/"><%= item.name %></a></li>
                 <% }) %>
@@ -87,7 +87,7 @@
                 <h4>Top taguri</h4>
               </div>
               <div class="tab-content">
-                <%+ da.news.topTags().then(function(rows){ %>
+                <%+ da.groups.topTags().then(function(rows){ %>
                   <ul class="list ot-tag">
                   <% rows.forEach(function(doc){ %>
                     <li class="list-item">

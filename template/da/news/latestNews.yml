@@ -1,5 +1,5 @@
 ###
-# select latest news by category slug
+# select latest news
 ###
 
 source: db
