@@ -1,0 +1,4 @@
+---
+permalink: data/json/categories/:id/page-:page.json
+---
+<%- JSON.stringify($pagger.list) %>

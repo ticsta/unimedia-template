@@ -1,5 +1,5 @@
 ###
-# select latest news by groupItem
+# select latest news by groupItem uniqueName
 ###
 
 source: db
@@ -11,7 +11,8 @@ params:
   where:
     section: stiri
     status: published
-    groupItems.uniqueName: '@{groupItem}'
+    groupItems.uniqueName: '@{uniqueName}'
   order:
     publishedAt: DESC
   limit: '@{limit|10}'
+  offset: '@{offset|0}'

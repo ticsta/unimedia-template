@@ -12,7 +12,7 @@ params:
     groupName: categories
     selector: '@{selector|.}'
     updatedAt:
-      $gte: '@{time:$1h}'
+      $gte: '@{time|$1h}'
   order:
     updatedAt: DESC
   limit: '@{limit|10}'

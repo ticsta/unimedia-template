@@ -20,6 +20,7 @@ defaultSection: pages
 # i_day - 1..31
 # short_year - 2014 > 14
 # extension - file extension
+### page - currentPage in pagger
 ###
 permalink:
   simple: :section/:title.:extension

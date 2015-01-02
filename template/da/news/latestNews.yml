@@ -14,3 +14,4 @@ params:
   order:
     publishedAt: DESC
   limit: '@{limit|10}'
+  offset: '@{offset|0}'

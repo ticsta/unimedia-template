@@ -6,52 +6,88 @@ tasks:
 
   # new tags, trigger when a document is published
   tags.new:
-    type: list
-    source:
-      da: groups.freshTags
-      params:
-        time: '@{$10m}'
-        limit: 20
-      limit: 0
-    file:
-      layout: tag
+    task:
+      type: list
+      limit: 1
+      source:
+        da: groups.freshTags
+        params:
+          time: '@{$10m}'
+          limit: 20
+      action:
+        file:
+          layout: tag
     trigger: document.published
 
   # fresh tags, trigger on every 3 hours
   tags.fresh:
-    type: list
-    source:
-      da: groups.freshTags
-      params:
-        time: '@{$6h}'
-        limit: 20
-      limit: 0
-    file:
-      layout: tag
-    trigger: $3h
+    task:
+      type: list
+      source:
+        da: groups.freshTags
+        params:
+          time: '@{$6h}'
+          limit: 20
+      action:
+        file:
+          layout: tag
+    trigger: 3h
 
   # new categories, trigger when a document is published
   categories.new:
-    type: list
-    source:
-      da: groups.freshCategories
-      params:
-        time: '@{$10m}'
-        limit: 20
-      limit: 0
-    file:
-      layout: category
+    task:
+      type: list
+      source:
+        da: groups.freshCategories
+        params:
+          time: '@{$10m}'
+          limit: 20
+      action:
+        file:
+          layout: category
     trigger: document.published
 
   # fresh categories, trigger on every 3 hours
   categories.fresh:
-    type: list
-    source:
-      da: groups.freshCategories
-      params:
-        time: '@{$6h}'
-        limit: 20
-      limit: 0
-    file:
-      layout: category
-    trigger: $3h
+    task:
+      type: list
+      source:
+        da: groups.freshCategories
+        params:
+          time: '@{$6h}'
+          limit: 20
+      action:
+        file:
+          layout: category
+    trigger: 3h
+
+  # pages by category, trigger on demand
+  news.pagesbycategory:
+    task:
+      type: page
+      limit: 10
+      source:
+        da: news.latestByGroupItem
+        params:
+          limit: 10
+      action:
+        file:
+          layout: news_category_page
+    trigger: ondemand
+
+  # jsonpages categories, trigger on every 3 hours
+  categories.jsonpages:
+    task:
+      type: list
+      limit: 1
+      source:
+        da: groups.freshCategories
+        params:
+          time: '@{$6h}'
+          limit: 20
+      action:
+        task: news.pagesbycategory
+        params:
+          - [uniqueName, uniqueName]
+
+    trigger: 3h
