@@ -17,14 +17,14 @@
   }
 
   function isHome(){
-    return $document && $document.url === 'index.html';
+    return $document && $document.url === '/';
   }
 %>
 <html>
   <head>
     <title><%= getTitle() %></title>
     <link rel="stylesheet" type="text/css" href="<%= $asset_src('css-main') %>">
-    <link rel="canonical" href="<%- $doc_url($document) %>" />
+    <link rel="canonical" href="http://<%- $site.host + ($file.url === '/index.html' ? '/' : $file.url) %>" />
     <link rel="shortcut icon" href="<%= $asset_src('static/img/favicon.ico') %>" />
   </head>
   <body>
@@ -68,7 +68,7 @@
                 <h4>Ultimele stiri</h4>
               </div>
               <div class="tab-content">
-                <%+ $da.news.latestNews({limit: 5}).then(function(rows){ %>
+                <%+ $da.news.latest({limit: 5}).then(function(rows){ %>
                   <ul class="list ot-news-item">
                   <% rows.forEach(function(doc){ %>
                     <li class="list-item">

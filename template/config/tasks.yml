@@ -61,20 +61,6 @@ tasks:
           layout: category
     trigger: 3h
 
-  # pages by category, trigger on demand
-  news.pagesbycategory:
-    task:
-      type: page
-      limit: 10
-      source:
-        da: news.latestByGroupItem
-        params:
-          limit: 10
-      action:
-        file:
-          layout: news_category_page
-    trigger: ondemand
-
   # jsonpages categories, trigger on every 3 hours
   categories.jsonpages:
     task:
@@ -91,3 +77,35 @@ tasks:
           - [uniqueName, uniqueName]
 
     trigger: 3h
+
+  #################
+  # NEWS
+  #################
+  # pages by category, trigger on demand
+  news.pagesbycategory:
+    task:
+      type: page
+      limit: 10
+      source:
+        da: news.latestByGroupItem
+        params:
+          limit: 10
+      action:
+        file:
+          layout: news_category_page
+    trigger: ondemand
+
+  # fresh updated news, trigger on every 1h
+  news.fresh:
+    task:
+      type: list
+      limit: 10
+      source:
+        da: news.fresh
+        params:
+          time: '@{$65m}'
+          limit: 10
+      action:
+        file:
+          layout: news_item
+    trigger: 1h

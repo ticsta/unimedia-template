@@ -1,0 +1,19 @@
+###
+# select fresh news
+###
+
+source: db
+params:
+  api: list
+  model: document
+  select:
+    - fields
+  where:
+    section: stiri
+    status: published
+    updatedAt:
+      $gte: '@{time|$1h}'
+  order:
+    updatedAt: DESC
+  limit: '@{limit|10}'
+  offset: '@{offset|0}'

@@ -2,7 +2,7 @@
 site:
   name: UNIMEDIA
   title: UNIMEDIA - Portalul de știri nr. 1 din Moldova
-  host: unimedia.info
+  host: unimedia.ticsta.com
 
 defaultSection: pages
 
@@ -24,7 +24,7 @@ defaultSection: pages
 ###
 permalink:
   simple: :section/:title.:extension
-  category: :slug/index.html
+  category: :slug/
   tag: taguri/:slug.html
 
 
