@@ -1,4 +1,5 @@
 ---
 permalink: data/json/categories/:id/page-:page.json
+maxage: 1h
 ---
 <%- JSON.stringify($pagger.list) %>

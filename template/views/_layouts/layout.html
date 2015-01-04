@@ -17,7 +17,7 @@
   }
 
   function isHome(){
-    return $document && $document.url === '/';
+    return $file.url === '/';
   }
 %>
 <html>
@@ -83,6 +83,7 @@
                   </ul>
                 <% }) %>
               </div>
+            </div>
             <div class="tab">
               <div class="tab-title">
                 <h4>Top taguri</h4>
