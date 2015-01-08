@@ -20,12 +20,14 @@ defaultSection: pages
 # i_day - 1..31
 # short_year - 2014 > 14
 # extension - file extension
-### page - currentPage in pagger
+# unique_name - groupItem uniqueName (ex: categories:politics, tags:new-york)
+# page - currentPage in pagger
 ###
 permalink:
   simple: :section/:title.:extension
   category: :slug/
   tag: taguri/:slug.html
+  page_by_group: data/json/:unique_name/page-:page.json
 
 
 assets:
