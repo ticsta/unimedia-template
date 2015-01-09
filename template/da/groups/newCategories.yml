@@ -1,19 +1,18 @@
 ###
-# select fresh categories
+# select new categories
 ###
 
 source: db
 params:
   action: list
   model: topgroupitem
-  select:
-    - fields
+  select: [fields]
   where:
     groupName: categories
-    selector: '@{selector|.}'
-    updatedAt:
+    selector: .
+    createdAt:
       $gte: '@{time|$1h}'
   order:
-    updatedAt: DESC
+    createdAt: DESC
   limit: '@{limit|10}'
   offset: '@{offset|0}'

@@ -4,7 +4,7 @@
 
 source: db
 params:
-  api: list
+  action: list
   model: topgroupitem
   select:
     - fields
@@ -16,3 +16,4 @@ params:
   order:
     createdAt: DESC
   limit: '@{limit|10}'
+  offset: '@{offset|0}'

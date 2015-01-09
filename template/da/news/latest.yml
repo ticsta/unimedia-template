@@ -4,7 +4,7 @@
 
 source: db
 params:
-  api: list
+  action: list
   model: document
   select:
     - fields
