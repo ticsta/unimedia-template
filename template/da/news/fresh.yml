@@ -9,7 +9,7 @@ params:
   select:
     - fields
   where:
-    section: stiri
+    section: news
     status: published
     updatedAt:
       $gte: '@{time|$1h}'

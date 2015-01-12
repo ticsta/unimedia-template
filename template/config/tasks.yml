@@ -17,7 +17,7 @@ tasks:
       action:
         file:
           layout: tag
-    trigger: document.published
+    trigger: [document.published, document.unpublished]
 
   # fresh tags, trigger on every 3 hours
   tags.fresh:
@@ -45,7 +45,7 @@ tasks:
       action:
         file:
           layout: category
-    trigger: document.published
+    trigger: [document.published, document.unpublished]
 
   # fresh categories, trigger on every 3 hours
   categories.fresh:
@@ -59,41 +59,41 @@ tasks:
       action:
         file:
           layout: category
-    trigger: 3h
+    trigger: [3h, document.unpublished]
 
-  # jsonpages categories, trigger on every 3 hours
-  categories.jsonpages:
-    task:
-      type: list
-      limit: 1
-      source:
-        da: groups.freshCategories
-        params:
-          time: '@{$6h}'
-          limit: 20
-      action:
-        task: news.pagesbycategory
-        params:
-          - [uniqueName, uniqueName]
+  # # jsonpages categories, trigger on every 3 hours
+  # categories.jsonpages:
+  #   task:
+  #     type: list
+  #     limit: 1
+  #     source:
+  #       da: groups.freshCategories
+  #       params:
+  #         time: '@{$6h}'
+  #         limit: 20
+  #     action:
+  #       task: news.pagesbycategory
+  #       params:
+  #         - [uniqueName, uniqueName]
 
-    trigger: 3h
+  #   trigger: 3h
 
   #################
   # NEWS
   #################
-  # pages by category, trigger on demand
-  news.pagesbycategory:
-    task:
-      type: page
-      limit: 10
-      source:
-        da: news.latestByGroupItem
-        params:
-          limit: 10
-      action:
-        file:
-          layout: news_group_page
-    trigger: ondemand
+  # # pages by category, trigger on demand
+  # news.pagesbycategory:
+  #   task:
+  #     type: page
+  #     limit: 10
+  #     source:
+  #       da: news.latestByGroupItem
+  #       params:
+  #         limit: 10
+  #     action:
+  #       file:
+  #         layout: news_group_page
+  #   trigger: ondemand
 
   # fresh updated news, trigger on every 1h
   news.fresh:
@@ -108,4 +108,4 @@ tasks:
       action:
         file:
           layout: news_item
-    trigger: 1h
+    trigger: [30m, document.unpublished]
