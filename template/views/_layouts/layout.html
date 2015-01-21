@@ -5,7 +5,7 @@
     return $document.name + ' - ' + $site.title;
   return $site.title;
 }
-  function getCategory(){
+  function getCategory() {
     if(!$document) return null;
     if($document.groupItems && $document.groupItems.length>0) {
       for(var i=0;i<$document.groupItems.length;i++ ) {
@@ -16,7 +16,7 @@
     return $document && $document.slug;
   }
 
-  function isHome(){
+  function isHome() {
     return $file.url === '/';
   }
 %>
