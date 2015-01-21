@@ -10,7 +10,7 @@ tasks:
       type: list
       limit: 1
       source:
-        da: groups.freshTags
+        storage: groups.freshTags
         params:
           time: '@{$10m}'
           limit: 20
@@ -24,7 +24,7 @@ tasks:
     task:
       type: list
       source:
-        da: groups.freshTags
+        storage: groups.freshTags
         params:
           time: '@{$6h}'
           limit: 20
@@ -38,7 +38,7 @@ tasks:
     task:
       type: list
       source:
-        da: groups.freshCategories
+        storage: groups.freshCategories
         params:
           time: '@{$10m}'
           limit: 20
@@ -52,7 +52,7 @@ tasks:
     task:
       type: list
       source:
-        da: groups.freshCategories
+        storage: groups.freshCategories
         params:
           time: '@{$6h}'
           limit: 20
@@ -67,7 +67,7 @@ tasks:
   #     type: list
   #     limit: 1
   #     source:
-  #       da: groups.freshCategories
+  #       storage: groups.freshCategories
   #       params:
   #         time: '@{$6h}'
   #         limit: 20
@@ -87,7 +87,7 @@ tasks:
   #     type: page
   #     limit: 10
   #     source:
-  #       da: news.latestByGroupItem
+  #       storage: news.latestByGroupItem
   #       params:
   #         limit: 10
   #     action:
@@ -101,7 +101,7 @@ tasks:
       type: list
       limit: 10
       source:
-        da: news.fresh
+        storage: news.fresh
         params:
           time: '@{$65m}'
           limit: 10

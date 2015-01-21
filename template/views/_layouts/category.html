@@ -11,7 +11,7 @@ maxage: 10m
   </div>
   <div class="tab-content">
   <div class="row">
-  <%+ $da.news.latestByCategory({category: $document.slug, limit: 5}).then(function(docs){ %>
+  <%+ $storage.news.latestByCategory({category: $document.slug, limit: 5}).then(function(docs){ %>
       <% for(var i = 0; i < docs.length; i++) { %>
       <% var doc = docs[i]; %>
       <div class="col-sm-6 col-xs-12">
