@@ -32,7 +32,7 @@ permalink:
 
 assets:
   names:
-    css-main:
-      - static/css/normalize.css
-      - static/css/bootstrap.css
-      - static/css/main.css
+    styles:
+      - css/normalize.css
+      - css/bootstrap.css
+      - css/main.css

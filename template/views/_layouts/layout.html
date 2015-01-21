@@ -23,9 +23,9 @@
 <html>
   <head>
     <title><%= getTitle() %></title>
-    <link rel="stylesheet" type="text/css" href="<%= $asset_src('css-main') %>">
-    <link rel="canonical" href="http://<%- $site.host + ($file.url === '/index.html' ? '/' : $file.url) %>" />
-    <link rel="shortcut icon" href="<%= $asset_src('static/img/favicon.ico') %>" />
+    <link rel="stylesheet" type="text/css" href="<%= $asset_src('styles') %>">
+    <link rel="canonical" href="http://<%- $site.host + $file.url %>" />
+    <link rel="shortcut icon" href="<%= $asset_src('img/favicon.ico') %>" />
   </head>
   <body>
     <div id="wrap" class="container">
@@ -36,7 +36,7 @@
           <div class="row">
             <div class="col-sm-3 col-xs-12">
               <div id="logo">
-                <a href="/" title="<%= $site.title %>"><img src="<%= $asset_src('static/img/logo.jpg') %>" alt="logo"/></a>
+                <a href="/" title="<%= $site.title %>"><img src="<%= $asset_src('img/logo.jpg') %>" alt="logo"/></a>
               </div>
             </div>
             <div class="col-sm-9 col-xs-12">
