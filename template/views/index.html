@@ -5,7 +5,7 @@ permalink: /
 ---
 <div class="row">
 <% $data.news.categories.forEach(function(category){ %>
-<%+ $storage.news.latestByCategory({category: category.slug, limit: 5}).then(function(docs){ %>
+<% $storage.news.latestByCategory({category: category.slug, limit: 5}).then(function(docs){ %>
 <div class="col-sm-6 col-xs-12">
 <div class="tab">
   <div class="tab-title">
@@ -31,7 +31,8 @@ permalink: /
           <h3><a href="<%= $doc_url(doc) %>"><%= doc.title %></a></h3>
         </div>
       </li>
-      <% }} %>
+      <% } %>
+      <% } %>
     </ul>
   </div>
 </div>

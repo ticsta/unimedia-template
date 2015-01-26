@@ -109,3 +109,19 @@ tasks:
         file:
           layout: news_item
     trigger: [30m, document.unpublished]
+
+  news.latest1h:
+    task:
+      type: list
+      limit: 1
+      source:
+        storage: news.latestRange
+        params:
+          min: '@{$1h}'
+          limit: 10
+      action:
+        file:
+          layout: news_item
+    trigger: [30m, document.published]
+
+

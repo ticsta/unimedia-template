@@ -1,0 +1,20 @@
+###
+# select latest news
+###
+
+source: db
+params:
+  action: list
+  model: document
+  select:
+    - fields
+  where:
+    section: news
+    status: published
+    publishedAt:
+      $gte: '@{min|$now}'
+      $lte: '@{max|$now}'
+  order:
+    publishedAt: DESC
+  limit: '@{limit|10}'
+  offset: '@{offset|0}'

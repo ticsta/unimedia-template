@@ -70,14 +70,9 @@
               <div class="tab-content">
                 <%+ $storage.news.latest({limit: 5}).then(function(rows){ %>
                   <ul class="list ot-news-item">
-                  <% rows.forEach(function(doc){ %>
+                  <% rows.forEach(function(item){ %>
                     <li class="list-item">
-                      <div class="item clearfix">
-                        <a href="<%= $doc_url(doc) %>">
-                          <img class="pull-left" src="<%= $image_src(doc.imageId, doc.imageExtension, 'small') %>" alt="" />
-                          <h3><%= doc.title %></h3>
-                        </a>
-                      </div>
+                      <% include('list-news-item.html') %>
                     </li>
                   <% }) %>
                   </ul>
