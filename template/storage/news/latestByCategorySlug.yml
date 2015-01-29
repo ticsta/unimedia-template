@@ -11,7 +11,8 @@ params:
   where:
     section: news
     status: published
-    groupItems.uniqueName: 'categories:@{category}'
+    groupitems.group: categories
+    groupitems.slug: '@{slug}'
   order:
     publishedAt: DESC
   limit: '@{limit|10}'

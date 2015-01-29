@@ -5,11 +5,10 @@ permalink: /
 ---
 <div class="row">
 <% $data.news.categories.forEach(function(category){ %>
-<% $storage.news.latestByCategory({category: category.slug, limit: 5}).then(function(docs){ %>
+<% $storage.news.latestByCategorySlug({slug: category.slug, limit: 5}).then(function(docs){ %>
 <div class="col-sm-6 col-xs-12">
 <div class="tab">
   <div class="tab-title">
-    <!-- <a class="pull-right" href="/"><img src="<%= $asset_src('img/rss.gif') %>"></a> -->
     <h4><%= category.name %></h4>
   </div>
   <div class="tab-content">

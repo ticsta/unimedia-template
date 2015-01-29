@@ -5,13 +5,12 @@
 source: db
 params:
   action: list
-  model: topgroupitem
+  model: groupitem
   select:
     - fields
   where:
-    groupName: tags
-    selector: '@{selector|.}'
+    group: tags
   order:
-    count: DESC
+    counts.total: DESC
   limit: '@{limit|10}'
   offset: '@{offset|0}'

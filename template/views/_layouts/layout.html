@@ -7,10 +7,10 @@
 }
   function getCategory() {
     if(!$document) return null;
-    if($document.groupItems && $document.groupItems.length>0) {
-      for(var i=0;i<$document.groupItems.length;i++ ) {
-        if($document.groupItems[i].groupName=='categories')
-        return $document.groupItems[i].uniqueName.substr(11);
+    if($document.groupitems && $document.groupitems.length>0) {
+      for(var i=0;i<$document.groupitems.length;i++ ) {
+        if($document.groupitems[i].group=='categories')
+        return $document.groupitems[i].slug;
       }
     }
     return $document && $document.slug;

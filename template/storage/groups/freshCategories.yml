@@ -5,12 +5,11 @@
 source: db
 params:
   action: list
-  model: topgroupitem
+  model: groupitem
   select:
     - fields
   where:
-    groupName: categories
-    selector: '@{selector|.}'
+    group: categories
     updatedAt:
       $gte: '@{time|$1h}'
   order:
