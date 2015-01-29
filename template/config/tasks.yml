@@ -96,32 +96,32 @@ tasks:
   #   trigger: ondemand
 
   # fresh updated news, trigger on every 1h
-  news.fresh:
-    task:
-      type: list
-      limit: 10
-      source:
-        storage: news.fresh
-        params:
-          time: '@{$65m}'
-          limit: 10
-      action:
-        file:
-          layout: news_item
-    trigger: [30m, document.unpublished]
+  # news.fresh:
+  #   task:
+  #     type: list
+  #     limit: 10
+  #     source:
+  #       storage: news.fresh
+  #       params:
+  #         time: '@{$65m}'
+  #         limit: 10
+  #     action:
+  #       file:
+  #         layout: news_item
+  #   trigger: [30m, document.unpublished]
 
-  news.latest1h:
-    task:
-      type: list
-      limit: 1
-      source:
-        storage: news.latestRange
-        params:
-          min: '@{$1h}'
-          limit: 10
-      action:
-        file:
-          layout: news_item
-    trigger: [30m, document.published]
+  # news.latest1h:
+  #   task:
+  #     type: list
+  #     limit: 1
+  #     source:
+  #       storage: news.latestRange
+  #       params:
+  #         min: '@{$1h}'
+  #         limit: 10
+  #     action:
+  #       file:
+  #         layout: news_item
+  #   trigger: [30m, document.published]
 
 
