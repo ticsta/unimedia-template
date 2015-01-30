@@ -6,7 +6,7 @@ source: db
 params:
   action: list
   model: groupitem
-  select: [fields]
+  select: fields
   where:
     group: categories
     createdAt:

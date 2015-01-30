@@ -48,18 +48,18 @@ tasks:
     trigger: [document.published, document.unpublished]
 
   # fresh categories, trigger on every 3 hours
-  categories.fresh:
-    task:
-      type: list
-      source:
-        storage: groups.freshCategories
-        params:
-          time: '@{$6h}'
-          limit: 20
-      action:
-        file:
-          layout: category
-    trigger: [3h, document.unpublished]
+  # categories.fresh:
+  #   task:
+  #     type: list
+  #     source:
+  #       storage: groups.freshCategories
+  #       params:
+  #         time: '@{$6h}'
+  #         limit: 20
+  #     action:
+  #       file:
+  #         layout: category
+  #   trigger: [3h, document.unpublished, document.unpublished]
 
   # # jsonpages categories, trigger on every 3 hours
   # categories.jsonpages:
