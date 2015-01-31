@@ -12,6 +12,8 @@ defaultSection: pages
 # title - slug, name
 # section - document section
 # type - document type
+# label - document label
+# language - document language
 ### group_GROUPNAME - example: group_tags or group_categories
 # year - document 4 year
 # month - 01..12
