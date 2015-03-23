@@ -1,0 +1,32 @@
+//---
+  maxage: 0
+  permalink: /
+  document: true
+  model: index
+//---
+
+extends ./_layouts/layout.jade
+
+block content
+  .row
+    each category in categories
+      each doc, i in newsByCategory[category.slug]
+        .col-sm-6.col-xs-12
+          .tab
+            .tab-title
+              h4= category.name
+            .tab-content
+              ul.list.ot-news-item
+                if (i==0)
+                  li.list-item.view-normal
+                    .item
+                      h3
+                        a(href=util.document_url(doc))= doc.title
+                      img.pull-left(src=util.image_src(doc.imageId, doc.imageExtension, 'small'))
+                      p= doc.summary
+                else
+                  li.list-item.view-small
+                    .item
+                      h3
+                        a(href=util.document_url(doc))= doc.title
+                      img.pull-left(src=util.image_src(doc.imageId, doc.imageExtension, 'small'))

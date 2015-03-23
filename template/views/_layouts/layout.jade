@@ -1,0 +1,50 @@
+html
+  head
+    title= head.title
+    meta(name='description', content= head.description)
+    link(rel='stylesheet', type='text/css', href=util.asset_src('styles'))
+    link(rel='canonical', href=(site.host + file.url))
+    link(rel='shortcut icon', href=util.asset_src('img/favicon.ico'))
+  body
+    #wrap.container
+      #page-top-banner.ban
+      #page-content
+        #page-header
+          .row
+            .col-sm-3.col-xs-12
+              #logo
+                a(href='/', title=site.title)
+                  img(src=util.asset_src('img/logo.jpg'), alt='logo')
+            .col-sm-9.col-xs-12
+              #page-header-info
+                .inner
+                  h4 portalul de ştiri nr. 1 din Moldova
+          #page-main-menu.clearfix
+            ul.mm.clearfix
+              li
+                a(href='/', class=(isHomePage ? 'active': '')) Acasă
+              each item in categories
+                li
+                  a(class=(selectedCategory === item.slug ? 'active': ''), href="/"+item.slug + "/")= item.name
+
+        .row
+          .col-md-8.col-ms-12
+            block content
+          .col-md-4.col-ms-12
+            .tab
+              .tab-title
+                h4 Ultimele stiri
+              .tab-content
+                ul(class="list ot-news-item")
+                  each item in latestNews
+                    li(class="list-item")
+                      include ../_partials/list-news-item.jade
+            .tab
+              .tab-title
+                h4 Top taguri
+              .tab-content
+                ul(class="list ot-tag")
+                  each item in topTags
+                    li(class="list-item")
+                      .item.clearfix
+                        a(href=util.permalink('tag', item))= item.name

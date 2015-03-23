@@ -1,0 +1,4 @@
+.item.clearfix
+  a(href=util.document_url(item))
+    img.pull-left(src=util.image_src(item.imageId, item.imageExtension, 'small'), alt='')
+    h3= item.title
