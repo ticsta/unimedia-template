@@ -33,33 +33,19 @@ tasks:
           view: _layouts/tag.jade
     trigger: 3h
 
-  # new categories, trigger when a document is published
-  categories.new:
+  # fresh categories, trigger on every 3 hours
+  categories.fresh:
     task:
       type: list
       source:
         storage: groups.freshCategories
         params:
-          time: '@{$10m}'
+          time: '@{$6h}'
           limit: 20
       action:
         file:
           view: _layouts/category.jade
-    trigger: [document.published, document.unpublished]
-
-  # fresh categories, trigger on every 3 hours
-  # categories.fresh:
-  #   task:
-  #     type: list
-  #     source:
-  #       storage: groups.freshCategories
-  #       params:
-  #         time: '@{$6h}'
-  #         limit: 20
-  #     action:
-  #       file:
-  #         layout: category
-  #   trigger: [3h, document.unpublished, document.unpublished]
+    trigger: [3h, document.published, document.unpublished]
 
   # # jsonpages categories, trigger on every 3 hours
   # categories.jsonpages:
@@ -81,8 +67,9 @@ tasks:
   #################
   # NEWS
   #################
+
   # new news, trigger when a document is published
-  categories.new:
+  news.rss:
     task:
       type: page
       limit: 1
@@ -94,6 +81,7 @@ tasks:
         file:
           view: _layouts/rss.xml.jade
     trigger: [document.published, document.unpublished]
+
   # # pages by category, trigger on demand
   # news.pagesbycategory:
   #   task:
