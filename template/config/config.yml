@@ -29,6 +29,7 @@ permalink:
   simple: :section/:title.:extension
   category: :slug/
   tag: taguri/:slug.html
+  rss: rss.xml
   page_by_group: data/json/:unique_name/page-:page.json
 
 

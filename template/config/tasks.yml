@@ -81,6 +81,19 @@ tasks:
   #################
   # NEWS
   #################
+  # new news, trigger when a document is published
+  categories.new:
+    task:
+      type: page
+      limit: 1
+      source:
+        storage: news.latest
+        params:
+          limit: 10
+      action:
+        file:
+          view: _layouts/rss.xml.jade
+    trigger: [document.published, document.unpublished]
   # # pages by category, trigger on demand
   # news.pagesbycategory:
   #   task:

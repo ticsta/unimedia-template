@@ -91,3 +91,19 @@ models.push('tag', {
     });
   }
 });
+
+models.push('category', {
+  extend: ['layout'],
+  /**
+   * Creates a model for a view
+   * @model has: site, file, document and pagger
+   */
+  create: function(model, storage) {
+    return storage.news.latestByGroupItemId({
+      id: model.document.id,
+      limit: 5
+    }).then(function(news) {
+      model.news = news || [];
+    });
+  }
+});

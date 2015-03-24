@@ -1,0 +1,27 @@
+//---
+  model: rss
+  permalink: rss
+//---
+
+doctype xml
+rss(version='2.0', xmlns:atom='http://www.w3.org/2005/Atom', xmlns:content='http://purl.org/rss/1.0/modules/content/')
+  channel
+    title= head.title
+    description= head.description
+    image
+      url http://unimedia.info/assets/img/logo.jpg
+      title UNIMEDIA
+      link
+      | http://unimedia.info/feed/
+      description portalul de ştiri nr. 1 din Moldova
+    pubdate= new Date()
+    generator UNIMEIDA RSS Generator 1.0
+    link
+    | http://unimedia.info/
+    atom:link(rel='self', type='application/rss+xml', href='http://unimedia.info/feed/')
+    each item in news
+      item
+        title= item.title
+        link= 'http://' + site.host + util.document_url(item)
+        description= item.summary
+
