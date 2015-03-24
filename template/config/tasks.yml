@@ -16,7 +16,7 @@ tasks:
           limit: 20
       action:
         file:
-          layout: tag
+          view: _layouts/tag.jade
     trigger: [document.published, document.unpublished]
 
   # fresh tags, trigger on every 3 hours
@@ -30,7 +30,7 @@ tasks:
           limit: 20
       action:
         file:
-          layout: tag
+          view: _layouts/tag.jade
     trigger: 3h
 
   # new categories, trigger when a document is published
@@ -44,7 +44,7 @@ tasks:
           limit: 20
       action:
         file:
-          layout: category
+          view: _layouts/category.jade
     trigger: [document.published, document.unpublished]
 
   # fresh categories, trigger on every 3 hours

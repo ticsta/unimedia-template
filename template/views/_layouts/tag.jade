@@ -1,0 +1,24 @@
+//---
+  section: news
+  permalink: tag
+  maxage: 20m
+  model: tag
+//---
+
+extends ./layout.jade
+
+block content
+  .tab
+    .tab-title
+      h4= document.name
+    .tab-content
+      .row
+        each doc in news
+          .col-sm-6.col-xs-12
+            ul.list.ot-news-item
+              li.list-item.view-normal
+                .item
+                  h3
+                    a(href=util.document_url(doc))= doc.title
+                  img.pull-left(src=util.image_src(doc.imageId, doc.imageExtension, 'small'))
+                  p= doc.summary
