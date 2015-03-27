@@ -47,22 +47,23 @@ tasks:
           view: _layouts/category.jade
     trigger: [3h, document.published, document.unpublished]
 
-  # # jsonpages categories, trigger on every 3 hours
-  # categories.jsonpages:
-  #   task:
-  #     type: list
-  #     limit: 1
-  #     source:
-  #       storage: groups.freshCategories
-  #       params:
-  #         time: '@{$6h}'
-  #         limit: 20
-  #     action:
-  #       task: news.pagesbycategory
-  #       params:
-  #         - [uniqueName, uniqueName]
+  # jsonpages categories, trigger on every 3 hours
+  categories.jsonpages:
+    task:
+      type: list
+      limit: 1
+      source:
+        storage: groups.freshCategories
+        params:
+          time: '@{$6h}'
+          limit: 20
+      action:
+        task: news.pagesbycategory
+        params:
+          #- [id, id]
+          - id
 
-  #   trigger: 3h
+    trigger: [3h, document.published, document.unpublished]
 
   #################
   # NEWS
@@ -82,19 +83,20 @@ tasks:
           view: _layouts/rss.xml.jade
     trigger: [document.published, document.unpublished]
 
-  # # pages by category, trigger on demand
-  # news.pagesbycategory:
-  #   task:
-  #     type: page
-  #     limit: 10
-  #     source:
-  #       storage: news.latestByGroupItem
-  #       params:
-  #         limit: 10
-  #     action:
-  #       file:
-  #         layout: news_group_page
-  #   trigger: ondemand
+  # pages by category, trigger on demand
+  news.pagesbycategory:
+    task:
+      type: page
+      limit: 10
+      pagesize: 10
+      source:
+        storage: news.latestByGroupItemId
+        params:
+          limit: 10
+      action:
+        file:
+          view: _layouts/news_group_page.json.ejs
+    #trigger: ondemand
 
   # fresh updated news, trigger on every 1h
   # news.fresh:

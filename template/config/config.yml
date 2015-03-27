@@ -7,6 +7,7 @@ site:
 defaultSection: pages
 
 ###  VARIABLES
+# id - document(file, group, etc.) id
 # name - document name
 # slug - document slug
 # title - slug, name
@@ -30,7 +31,7 @@ permalink:
   category: :slug/
   tag: taguri/:slug.html
   rss: rss.xml
-  page_by_group: data/json/:unique_name/page-:page.json
+  page_by_group: data/json/:id/page-:page.json
 
 
 assets:
