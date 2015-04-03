@@ -12,7 +12,6 @@ params:
     status: published
     updatedAt:
       $gte: '@{time|$1h}'
-  order:
-    updatedAt: DESC
+  order: -updatedAt
   limit: '@{limit|10}'
   offset: '@{offset|0}'

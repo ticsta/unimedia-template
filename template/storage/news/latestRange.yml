@@ -13,7 +13,6 @@ params:
     publishedAt:
       $gte: '@{min|$now}'
       $lte: '@{max|$now}'
-  order:
-    publishedAt: DESC
+  order: -publishedAt
   limit: '@{limit|10}'
   offset: '@{offset|0}'

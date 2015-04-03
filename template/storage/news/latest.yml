@@ -10,7 +10,6 @@ params:
   where:
     section: news
     status: published
-  order:
-    publishedAt: DESC
+  order: -publishedAt
   limit: '@{limit|10}'
   offset: '@{offset|0}'

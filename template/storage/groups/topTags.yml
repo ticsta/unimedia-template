@@ -9,7 +9,6 @@ params:
   select: fields
   where:
     group: tags
-  order:
-    counts.total: DESC
+  order: -counts.total
   limit: '@{limit|10}'
   offset: '@{offset|0}'

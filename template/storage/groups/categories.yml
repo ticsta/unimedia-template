@@ -9,7 +9,6 @@ params:
   select: fields
   where:
     group: categories
-  order:
-    createdAt: ASC
+  order: createdAt
   limit: '@{limit|10}'
   offset: '@{offset|0}'

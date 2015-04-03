@@ -12,7 +12,6 @@ params:
     status: published
     groupitems.group: categories
     groupitems.slug: '@{slug}'
-  order:
-    publishedAt: DESC
+  order: -publishedAt
   limit: '@{limit|10}'
   offset: '@{offset|0}'
